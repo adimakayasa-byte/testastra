@@ -1,61 +1,97 @@
 {
-  "_note": "Data CONTOH. Jalankan `node scrape.js` untuk mengganti dengan data asli dari shopanddrive.com/produk?category=Aki",
+  "_note": "9 produk contoh dari shopanddrive.com kategori Aki. Ganti field image dengan URL foto asli bila ada.",
   "category": "Aki",
   "source": "https://www.shopanddrive.com/produk?category=Aki",
   "products": [
     {
-      "name": "Aki GS Astra Premium NS40Z",
+      "name": "Aki GS Astra Hybrid NS70",
       "brand": "GS Astra",
-      "price": "Rp 620.000",
-      "sku": "NS40Z",
-      "image": "https://placehold.co/600x600/e30613/ffffff?text=NS40Z",
+      "category": "Hybrid",
+      "price": "Rp 1.263.000",
+      "sku": "NS70",
+      "image": "",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
-      "specs": "12V 35Ah - Aki basah untuk mobil kecil (Avanza, Xenia, Brio)"
+      "specs": "Hybrid · Low Maintenance"
     },
     {
-      "name": "Aki GS Astra Hybrid NS60",
+      "name": "Aki GS Astra Hybrid NS60S",
       "brand": "GS Astra",
-      "price": "Rp 780.000",
-      "sku": "NS60",
-      "image": "https://placehold.co/600x600/e30613/ffffff?text=NS60",
+      "category": "Hybrid",
+      "price": "Rp 936.000",
+      "sku": "NS60S",
+      "image": "",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
-      "specs": "12V 45Ah - Aki hybrid low maintenance untuk sedan & MPV"
+      "specs": "Hybrid · Low Maintenance"
     },
     {
-      "name": "Aki Incoe MF NS70",
-      "brand": "Incoe",
-      "price": "Rp 950.000",
-      "sku": "NS70-MF",
-      "image": "https://placehold.co/600x600/1a1a1a/ffffff?text=NS70+MF",
+      "name": "Aki GS Astra Hybrid N70Z",
+      "brand": "GS Astra",
+      "category": "Hybrid",
+      "price": "Rp 1.527.000",
+      "sku": "N70Z",
+      "image": "",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
-      "specs": "12V 65Ah - Maintenance free, bebas isi ulang air aki"
+      "specs": "Hybrid · Low Maintenance"
     },
     {
-      "name": "Aki Amaron Go 55B24LS",
-      "brand": "Amaron",
-      "price": "Rp 1.050.000",
-      "sku": "55B24LS",
-      "image": "https://placehold.co/600x600/00843d/ffffff?text=Amaron",
+      "name": "Aki GS Astra MF OE 355LN2",
+      "brand": "GS Astra",
+      "category": "Maintenance Free",
+      "price": "Rp 2.109.000",
+      "sku": "355LN2",
+      "image": "",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
-      "specs": "12V 45Ah - Teknologi silven-X, umur pakai panjang"
+      "specs": "Maintenance Free · P 242 × L 175 × T 190 mm"
     },
     {
-      "name": "Aki Bosch Mega Power 55D26L",
-      "brand": "Bosch",
-      "price": "Rp 1.250.000",
-      "sku": "55D26L",
-      "image": "https://placehold.co/600x600/ed1c24/ffffff?text=Bosch",
+      "name": "Aki GS Astra MF ISS S95",
+      "brand": "GS Astra",
+      "category": "Maintenance Free",
+      "price": "Rp 6.211.000",
+      "sku": "S95",
+      "image": "",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
-      "specs": "12V 60Ah - Cocok untuk SUV & mobil diesel"
+      "specs": "Maintenance Free · Idle Start Stop · P 260 × L 173 × T 204 mm"
     },
     {
-      "name": "Aki Delkor MF DIN55",
-      "brand": "Delkor",
-      "price": "Rp 1.150.000",
-      "sku": "DIN55",
-      "image": "https://placehold.co/600x600/003a70/ffffff?text=Delkor",
+      "name": "Aki GS Astra MF ISS Q85",
+      "brand": "GS Astra",
+      "category": "Maintenance Free",
+      "price": "Rp 4.170.000",
+      "sku": "Q85",
+      "image": "",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
-      "specs": "12V 55Ah - Standar Eropa (DIN) untuk mobil premium"
+      "specs": "Maintenance Free · Idle Start Stop · P 230 × L 171 × T 200 mm"
+    },
+    {
+      "name": "Aki GS Astra ISS M-42R",
+      "brand": "GS Astra",
+      "category": "Maintenance Free",
+      "price": "Rp 2.604.000",
+      "sku": "M-42R",
+      "image": "",
+      "url": "https://www.shopanddrive.com/produk?category=Aki",
+      "specs": "Maintenance Free · Idle Start Stop"
+    },
+    {
+      "name": "Aki GS Astra Calcium 75D23L",
+      "brand": "GS Astra",
+      "category": "Calcium",
+      "price": "Rp 1.799.000",
+      "sku": "75D23L",
+      "image": "",
+      "url": "https://www.shopanddrive.com/produk?category=Aki",
+      "specs": "Calcium Battery"
+    },
+    {
+      "name": "Aki GS Astra Calcium 65B24LS",
+      "brand": "GS Astra",
+      "category": "Calcium",
+      "price": "Rp 1.548.000",
+      "sku": "65B24LS",
+      "image": "",
+      "url": "https://www.shopanddrive.com/produk?category=Aki",
+      "specs": "Calcium Battery"
     }
   ]
 }

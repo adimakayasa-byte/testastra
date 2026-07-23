@@ -172,9 +172,15 @@
     /* ========================================================= */
 
     const FALLBACK = { products: [
-      { name: "Aki GS Astra Premium NS40Z", brand: "GS Astra", price: "Rp 620.000", sku: "NS40Z",
-        image: "https://placehold.co/600x600/e30613/ffffff?text=NS40Z", url: "https://www.shopanddrive.com/produk?category=Aki",
-        specs: "12V 35Ah - untuk mobil kecil (Avanza, Brio)" }
+      { name: "Aki GS Astra Hybrid NS70",  brand: "GS Astra", category: "Hybrid", price: "Rp 1.263.000", sku: "NS70",  image: "", specs: "Hybrid · Low Maintenance" },
+      { name: "Aki GS Astra Hybrid NS60S", brand: "GS Astra", category: "Hybrid", price: "Rp 936.000",   sku: "NS60S", image: "", specs: "Hybrid · Low Maintenance" },
+      { name: "Aki GS Astra Hybrid N70Z",  brand: "GS Astra", category: "Hybrid", price: "Rp 1.527.000", sku: "N70Z",  image: "", specs: "Hybrid · Low Maintenance" },
+      { name: "Aki GS Astra MF OE 355LN2", brand: "GS Astra", category: "Maintenance Free", price: "Rp 2.109.000", sku: "355LN2", image: "", specs: "Maintenance Free · P 242 × L 175 × T 190 mm" },
+      { name: "Aki GS Astra MF ISS S95",   brand: "GS Astra", category: "Maintenance Free", price: "Rp 6.211.000", sku: "S95",    image: "", specs: "Maintenance Free · Idle Start Stop · P 260 × L 173 × T 204 mm" },
+      { name: "Aki GS Astra MF ISS Q85",   brand: "GS Astra", category: "Maintenance Free", price: "Rp 4.170.000", sku: "Q85",    image: "", specs: "Maintenance Free · Idle Start Stop · P 230 × L 171 × T 200 mm" },
+      { name: "Aki GS Astra ISS M-42R",    brand: "GS Astra", category: "Maintenance Free", price: "Rp 2.604.000", sku: "M-42R",  image: "", specs: "Maintenance Free · Idle Start Stop" },
+      { name: "Aki GS Astra Calcium 75D23L", brand: "GS Astra", category: "Calcium", price: "Rp 1.799.000", sku: "75D23L", image: "", specs: "Calcium Battery" },
+      { name: "Aki GS Astra Calcium 65B24LS", brand: "GS Astra", category: "Calcium", price: "Rp 1.548.000", sku: "65B24LS", image: "", specs: "Calcium Battery" }
     ]};
 
     const carousel = document.getElementById("carousel");
@@ -188,6 +194,23 @@
     }
     function rupiah(n) { return "Rp " + n.toLocaleString("id-ID"); }
 
+    // Placeholder GS ber-brand bila foto asli belum ada (warna ikut kategori)
+    function placeholderSVG(p) {
+      const cat = (p.category || "").toLowerCase();
+      let c1 = "#00843d", c2 = "#0a5a2c";            // Hybrid: hijau
+      if (cat.indexOf("calcium") >= 0) { c1 = "#f4b400"; c2 = "#c98a00"; }   // Calcium: emas
+      else if (cat.indexOf("maintenance") >= 0 || cat.indexOf("iss") >= 0) { c1 = "#2b2f36"; c2 = "#12151a"; } // MF: gelap
+      const sku = (p.sku || "").replace(/&/g, "&amp;");
+      return '<svg viewBox="0 0 300 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">' +
+        '<defs><linearGradient id="g' + sku + '" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0" stop-color="' + c1 + '"/><stop offset="1" stop-color="' + c2 + '"/></linearGradient></defs>' +
+        '<rect width="300" height="300" fill="#fff"/>' +
+        '<rect x="70" y="70" width="160" height="160" rx="14" fill="url(#g' + sku + ')"/>' +
+        '<text x="150" y="165" font-family="Arial, sans-serif" font-size="62" font-weight="800" fill="#fff" text-anchor="middle">GS</text>' +
+        '<text x="150" y="205" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle" opacity="0.9">' + sku + '</text>' +
+        '</svg>';
+    }
+
     function render(products) {
       PRODUCTS = products || [];
       if (!PRODUCTS.length) { carousel.innerHTML = '<p style="padding:24px;color:#6b7280">Belum ada produk.</p>'; return; }
@@ -195,7 +218,7 @@
         return (
           '<div class="card" id="card-' + i + '">' +
             '<div class="img-box">' +
-              '<img loading="lazy" src="' + (p.image || "") + '" alt="' + (p.name || "") + '">' +
+              (p.image ? '<img loading="lazy" src="' + p.image + '" alt="' + (p.name || "") + '">' : placeholderSVG(p)) +
               '<span class="qty-badge" id="badge-' + i + '">0</span>' +
             '</div>' +
             '<div class="body">' +
