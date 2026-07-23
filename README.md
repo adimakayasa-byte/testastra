@@ -1,8 +1,10 @@
-# Carousel Aki Shop & Drive — untuk Link WhatsApp
+# Checkout Aki Shop & Drive — WhatsApp Commerce
 
-Halaman web berisi **carousel produk aki mobil** yang bisa dibagikan lewat link WhatsApp.
-Customer tinggal geser kartu, pilih aki yang diinginkan, lalu tekan **Pesan via WhatsApp** —
-otomatis membuka chat WA ke toko dengan pesan pesanan sudah terisi.
+Halaman **checkout produk aki mobil** untuk dibagikan lewat link WhatsApp.
+Alurnya: customer pilih beberapa aki + atur jumlah tiap barang → tekan **Checkout via WhatsApp**.
+**Tanpa pembayaran di web** — sistem otomatis menyusun pesan WA berisi rincian pesanan
+(nama barang, jumlah, subtotal, dan total), lalu membuka chat ke nomor toko sehingga
+barang yang dipesan langsung teridentifikasi di WhatsApp.
 
 ## Isi
 
