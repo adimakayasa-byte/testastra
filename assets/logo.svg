@@ -1,0 +1,14 @@
+<svg viewBox="0 0 1024 653" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Shop & Drive">
+  <rect width="1024" height="653" fill="#ee3124"/>
+  <rect y="430" width="1024" height="76" fill="#3b34a0"/>
+  <g fill="#3b34a0">
+    <rect x="828" y="150" width="150" height="20" transform="skewX(-18)"/>
+    <rect x="828" y="185" width="150" height="20" transform="skewX(-18)"/>
+    <rect x="828" y="220" width="150" height="20" transform="skewX(-18)"/>
+    <rect x="828" y="255" width="150" height="20" transform="skewX(-18)"/>
+  </g>
+  <g fill="#ffffff" font-family="'Arial Black','Arial',sans-serif" font-weight="900" font-style="italic" letter-spacing="-6">
+    <text x="86" y="245" font-size="205">SHOP</text>
+    <text x="140" y="415" font-size="205">&amp;DRIVE</text>
+  </g>
+</svg>

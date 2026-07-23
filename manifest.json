@@ -1,0 +1,16 @@
+{
+  "name": "Shop & Drive — Aki",
+  "short_name": "S&D Aki",
+  "description": "Pesan aki mobil Shop & Drive langsung via WhatsApp",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ee3124",
+  "theme_color": "#ee3124",
+  "lang": "id",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
