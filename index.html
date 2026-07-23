@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop &amp; Drive — Pilih Aki Mobil</title>
+
+  <!-- ====== KONFIGURASI (ubah bagian ini) ====== -->
+  <!-- WA_NUMBER: nomor WhatsApp tujuan pesanan, format 62xxxx (tanpa +, tanpa spasi) -->
+  <!-- Diset lewat variabel JS di bawah (cari: const WA_NUMBER) -->
+
+  <!-- Open Graph: tampilan preview saat link dibagikan di WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shop & Drive — Pilih Aki Mobil" />
+  <meta property="og:description" content="Geser & pilih aki mobil yang mau dibeli. Pesan langsung via WhatsApp." />
+  <meta property="og:image" content="https://placehold.co/1200x630/e30613/ffffff?text=Shop+%26+Drive+-+Aki" />
+
+  <style>
+    :root {
+      --sad-red: #e30613;
+      --sad-red-dark: #b8050f;
+      --ink: #1a1a1a;
+      --muted: #6b7280;
+      --bg: #f4f5f7;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --wa: #25d366;
+      --wa-dark: #1da851;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      padding-bottom: 32px;
+    }
+    header {
+      background: linear-gradient(135deg, var(--sad-red), var(--sad-red-dark));
+      color: #fff;
+      padding: 20px 16px 24px;
+      text-align: center;
+    }
+    header .brand { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; opacity: .9; font-weight: 600; }
+    header h1 { font-size: 22px; margin-top: 4px; font-weight: 800; }
+    header p { font-size: 13px; opacity: .92; margin-top: 6px; }
+
+    .wrap { max-width: 960px; margin: 0 auto; }
+
+    .carousel-shell { position: relative; margin-top: 18px; }
+    .carousel {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 4px 16px 18px;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .carousel::-webkit-scrollbar { height: 6px; }
+    .carousel::-webkit-scrollbar-thumb { background: #cbd0d6; border-radius: 999px; }
+
+    .card {
+      scroll-snap-align: start;
+      flex: 0 0 78%;
+      max-width: 260px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px rgba(0,0,0,.05);
+    }
+    .card .img-box {
+      background: #fff;
+      aspect-ratio: 1 / 1;
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .card .img-box img { width: 100%; height: 100%; object-fit: contain; }
+    .card .body { padding: 12px 14px 14px; display: flex; flex-direction: column; flex: 1; }
+    .card .brand-tag {
+      font-size: 11px; font-weight: 700; color: var(--sad-red);
+      text-transform: uppercase; letter-spacing: .5px;
+    }
+    .card h3 { font-size: 15px; font-weight: 700; margin: 3px 0; }
+    .card .specs { font-size: 12px; color: var(--muted); flex: 1; }
+    .card .price { font-size: 18px; font-weight: 800; margin: 10px 0 12px; }
+    .card .btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--wa); color: #fff; text-decoration: none;
+      font-weight: 700; font-size: 14px; padding: 11px; border-radius: 10px;
+      border: none; cursor: pointer; transition: background .15s;
+    }
+    .card .btn:active { background: var(--wa-dark); }
+    .card .btn svg { width: 18px; height: 18px; fill: #fff; }
+
+    .navbtn {
+      position: absolute; top: 42%; transform: translateY(-50%);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #fff; border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+      display: none; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 20px; color: var(--ink); z-index: 3;
+    }
+    .navbtn.prev { left: 4px; }
+    .navbtn.next { right: 4px; }
+    @media (min-width: 700px) { .navbtn { display: flex; } .card { flex-basis: 240px; } }
+
+    footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 22px; padding: 0 16px; }
+    footer a { color: var(--sad-red); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Shop &amp; Drive</div>
+    <h1>Pilih Aki Mobil Kamu</h1>
+    <p id="subtitle">Geser kartu, lalu tekan <b>Pesan via WhatsApp</b> ✨</p>
+  </header>
+
+  <div class="wrap">
+    <div class="carousel-shell">
+      <button class="navbtn prev" aria-label="Sebelumnya" onclick="nudge(-1)">‹</button>
+      <div class="carousel" id="carousel"></div>
+      <button class="navbtn next" aria-label="Berikutnya" onclick="nudge(1)">›</button>
+    </div>
+  </div>
+
+  <footer>
+    Sumber produk:
+    <a href="https://www.shopanddrive.com/produk?category=Aki" target="_blank" rel="noopener">shopanddrive.com — Aki</a>
+  </footer>
+
+  <script>
+    /* =========================================================
+       KONFIGURASI — ubah dua baris di bawah ini
+       ========================================================= */
+    const WA_NUMBER = "62812XXXXXXXX";           // <-- ganti nomor WhatsApp tujuan (format 62...)
+    const STORE_NAME = "Shop & Drive";           // nama toko di pesan
+
+    /* Template pesan otomatis saat customer klik tombol.
+       {name}, {price}, {sku}, {url} akan diganti otomatis. */
+    const MESSAGE_TEMPLATE =
+      "Halo " + STORE_NAME + " 👋\n\n" +
+      "Saya mau pesan aki berikut:\n" +
+      "• Produk: {name}\n" +
+      "• Harga: {price}\n" +
+      "• Kode: {sku}\n\n" +
+      "Apakah stok tersedia? Terima kasih.";
+
+    /* Data cadangan bila products.json gagal dimuat (mis. dibuka via file://) */
+    const FALLBACK = {
+      products: [
+        { name: "Aki GS Astra Premium NS40Z", brand: "GS Astra", price: "Rp 620.000", sku: "NS40Z",
+          image: "https://placehold.co/600x600/e30613/ffffff?text=NS40Z", url: "https://www.shopanddrive.com/produk?category=Aki",
+          specs: "12V 35Ah - untuk mobil kecil (Avanza, Brio)" }
+      ]
+    };
+
+    const carousel = document.getElementById("carousel");
+
+    function waLink(p) {
+      const msg = MESSAGE_TEMPLATE
+        .replaceAll("{name}", p.name || "-")
+        .replaceAll("{price}", p.price || "-")
+        .replaceAll("{sku}", p.sku || "-")
+        .replaceAll("{url}", p.url || "");
+      return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
+    }
+
+    const waIcon = '<svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2.1c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.5c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.4 1.2 1.2-4.3-.3-.4a10 10 0 01-1.6-5.4C5.2 9.6 10 5 16 5s10.8 4.6 10.8 10.5S22 25.5 16 25.5zm5.9-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.2c-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.4 5.3 4.7 2 .8 2.7.9 3.7.8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>';
+
+    function render(products) {
+      if (!products || !products.length) {
+        carousel.innerHTML = '<p style="padding:24px;color:#6b7280">Belum ada produk.</p>';
+        return;
+      }
+      carousel.innerHTML = products.map(function (p) {
+        return (
+          '<div class="card">' +
+            '<div class="img-box"><img loading="lazy" src="' + (p.image || "") + '" alt="' + (p.name || "") + '"></div>' +
+            '<div class="body">' +
+              (p.brand ? '<span class="brand-tag">' + p.brand + '</span>' : '') +
+              '<h3>' + (p.name || "") + '</h3>' +
+              '<div class="specs">' + (p.specs || "") + '</div>' +
+              '<div class="price">' + (p.price || "") + '</div>' +
+              '<a class="btn" href="' + waLink(p) + '" target="_blank" rel="noopener">' + waIcon + ' Pesan via WhatsApp</a>' +
+            '</div>' +
+          '</div>'
+        );
+      }).join("");
+    }
+
+    function nudge(dir) {
+      const card = carousel.querySelector(".card");
+      const step = card ? card.offsetWidth + 14 : 260;
+      carousel.scrollBy({ left: dir * step, behavior: "smooth" });
+    }
+
+    fetch("products.json", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("no json"); return r.json(); })
+      .then(function (data) { render(data.products); })
+      .catch(function () { render(FALLBACK.products); });
+  </script>
+</body>
+</html>

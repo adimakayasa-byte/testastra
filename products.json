@@ -1,0 +1,61 @@
+{
+  "_note": "Data CONTOH. Jalankan `node scrape.js` untuk mengganti dengan data asli dari shopanddrive.com/produk?category=Aki",
+  "category": "Aki",
+  "source": "https://www.shopanddrive.com/produk?category=Aki",
+  "products": [
+    {
+      "name": "Aki GS Astra Premium NS40Z",
+      "brand": "GS Astra",
+      "price": "Rp 620.000",
+      "sku": "NS40Z",
+      "image": "https://placehold.co/600x600/e30613/ffffff?text=NS40Z",
+      "url": "https://www.shopanddrive.com/produk?category=Aki",
+      "specs": "12V 35Ah - Aki basah untuk mobil kecil (Avanza, Xenia, Brio)"
+    },
+    {
+      "name": "Aki GS Astra Hybrid NS60",
+      "brand": "GS Astra",
+      "price": "Rp 780.000",
+      "sku": "NS60",
+      "image": "https://placehold.co/600x600/e30613/ffffff?text=NS60",
+      "url": "https://www.shopanddrive.com/produk?category=Aki",
+      "specs": "12V 45Ah - Aki hybrid low maintenance untuk sedan & MPV"
+    },
+    {
+      "name": "Aki Incoe MF NS70",
+      "brand": "Incoe",
+      "price": "Rp 950.000",
+      "sku": "NS70-MF",
+      "image": "https://placehold.co/600x600/1a1a1a/ffffff?text=NS70+MF",
+      "url": "https://www.shopanddrive.com/produk?category=Aki",
+      "specs": "12V 65Ah - Maintenance free, bebas isi ulang air aki"
+    },
+    {
+      "name": "Aki Amaron Go 55B24LS",
+      "brand": "Amaron",
+      "price": "Rp 1.050.000",
+      "sku": "55B24LS",
+      "image": "https://placehold.co/600x600/00843d/ffffff?text=Amaron",
+      "url": "https://www.shopanddrive.com/produk?category=Aki",
+      "specs": "12V 45Ah - Teknologi silven-X, umur pakai panjang"
+    },
+    {
+      "name": "Aki Bosch Mega Power 55D26L",
+      "brand": "Bosch",
+      "price": "Rp 1.250.000",
+      "sku": "55D26L",
+      "image": "https://placehold.co/600x600/ed1c24/ffffff?text=Bosch",
+      "url": "https://www.shopanddrive.com/produk?category=Aki",
+      "specs": "12V 60Ah - Cocok untuk SUV & mobil diesel"
+    },
+    {
+      "name": "Aki Delkor MF DIN55",
+      "brand": "Delkor",
+      "price": "Rp 1.150.000",
+      "sku": "DIN55",
+      "image": "https://placehold.co/600x600/003a70/ffffff?text=Delkor",
+      "url": "https://www.shopanddrive.com/produk?category=Aki",
+      "specs": "12V 55Ah - Standar Eropa (DIN) untuk mobil premium"
+    }
+  ]
+}
