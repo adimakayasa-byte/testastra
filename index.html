@@ -79,6 +79,7 @@
       border-bottom: 1px solid var(--border); position: relative;
     }
     .card .img-box img { width: 100%; height: 100%; object-fit: contain; }
+    .card .img-box .prod-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; }
     .qty-badge {
       position: absolute; top: 8px; right: 8px; background: var(--sad-red); color: #fff;
       min-width: 24px; height: 24px; border-radius: 999px; font-size: 13px; font-weight: 700;
@@ -211,15 +212,15 @@
     /* ========================================================= */
 
     const FALLBACK = { products: [
-      { name: "Aki GS Astra Hybrid NS70",  brand: "GS Astra", category: "Hybrid", price: "Rp 1.263.000", sku: "NS70",  image: "", specs: "Hybrid · Low Maintenance" },
-      { name: "Aki GS Astra Hybrid NS60S", brand: "GS Astra", category: "Hybrid", price: "Rp 936.000",   sku: "NS60S", image: "", specs: "Hybrid · Low Maintenance" },
-      { name: "Aki GS Astra Hybrid N70Z",  brand: "GS Astra", category: "Hybrid", price: "Rp 1.527.000", sku: "N70Z",  image: "", specs: "Hybrid · Low Maintenance" },
-      { name: "Aki GS Astra MF OE 355LN2", brand: "GS Astra", category: "Maintenance Free", price: "Rp 2.109.000", sku: "355LN2", image: "", specs: "Maintenance Free · P 242 × L 175 × T 190 mm" },
-      { name: "Aki GS Astra MF ISS S95",   brand: "GS Astra", category: "Maintenance Free", price: "Rp 6.211.000", sku: "S95",    image: "", specs: "Maintenance Free · Idle Start Stop · P 260 × L 173 × T 204 mm" },
-      { name: "Aki GS Astra MF ISS Q85",   brand: "GS Astra", category: "Maintenance Free", price: "Rp 4.170.000", sku: "Q85",    image: "", specs: "Maintenance Free · Idle Start Stop · P 230 × L 171 × T 200 mm" },
-      { name: "Aki GS Astra ISS M-42R",    brand: "GS Astra", category: "Maintenance Free", price: "Rp 2.604.000", sku: "M-42R",  image: "", specs: "Maintenance Free · Idle Start Stop" },
-      { name: "Aki GS Astra Calcium 75D23L", brand: "GS Astra", category: "Calcium", price: "Rp 1.799.000", sku: "75D23L", image: "", specs: "Calcium Battery" },
-      { name: "Aki GS Astra Calcium 65B24LS", brand: "GS Astra", category: "Calcium", price: "Rp 1.548.000", sku: "65B24LS", image: "", specs: "Calcium Battery" }
+      { name: "Aki GS Astra Hybrid NS70",  brand: "GS Astra", category: "Hybrid", price: "Rp 1.263.000", sku: "NS70",  image: "assets/products/hybrid.jpg", specs: "Hybrid · Low Maintenance" },
+      { name: "Aki GS Astra Hybrid NS60S", brand: "GS Astra", category: "Hybrid", price: "Rp 936.000",   sku: "NS60S", image: "assets/products/hybrid.jpg", specs: "Hybrid · Low Maintenance" },
+      { name: "Aki GS Astra Hybrid N70Z",  brand: "GS Astra", category: "Hybrid", price: "Rp 1.527.000", sku: "N70Z",  image: "assets/products/hybrid.jpg", specs: "Hybrid · Low Maintenance" },
+      { name: "Aki GS Astra MF OE 355LN2", brand: "GS Astra", category: "Maintenance Free", price: "Rp 2.109.000", sku: "355LN2", image: "assets/products/mf.jpg", specs: "Maintenance Free · P 242 × L 175 × T 190 mm" },
+      { name: "Aki GS Astra MF ISS S95",   brand: "GS Astra", category: "Maintenance Free", price: "Rp 6.211.000", sku: "S95",    image: "assets/products/mf.jpg", specs: "Maintenance Free · Idle Start Stop · P 260 × L 173 × T 204 mm" },
+      { name: "Aki GS Astra MF ISS Q85",   brand: "GS Astra", category: "Maintenance Free", price: "Rp 4.170.000", sku: "Q85",    image: "assets/products/mf.jpg", specs: "Maintenance Free · Idle Start Stop · P 230 × L 171 × T 200 mm" },
+      { name: "Aki GS Astra ISS M-42R",    brand: "GS Astra", category: "Maintenance Free", price: "Rp 2.604.000", sku: "M-42R",  image: "assets/products/mf.jpg", specs: "Maintenance Free · Idle Start Stop" },
+      { name: "Aki GS Astra Calcium 75D23L", brand: "GS Astra", category: "Calcium", price: "Rp 1.799.000", sku: "75D23L", image: "assets/products/calcium.jpg", specs: "Calcium Battery" },
+      { name: "Aki GS Astra Calcium 65B24LS", brand: "GS Astra", category: "Calcium", price: "Rp 1.548.000", sku: "65B24LS", image: "assets/products/calcium.jpg", specs: "Calcium Battery" }
     ]};
 
     const carousel = document.getElementById("carousel");
@@ -257,7 +258,8 @@
         return (
           '<div class="card" id="card-' + i + '">' +
             '<div class="img-box">' +
-              (p.image ? '<img loading="lazy" src="' + p.image + '" alt="' + (p.name || "") + '">' : placeholderSVG(p)) +
+              placeholderSVG(p) +
+              (p.image ? '<img class="prod-img" loading="lazy" src="' + p.image + '" alt="' + (p.name || "") + '" onerror="this.remove()">' : '') +
               '<span class="qty-badge" id="badge-' + i + '">0</span>' +
             '</div>' +
             '<div class="body">' +

@@ -9,7 +9,7 @@
       "category": "Hybrid",
       "price": "Rp 1.263.000",
       "sku": "NS70",
-      "image": "",
+      "image": "assets/products/hybrid.jpg",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
       "specs": "Hybrid · Low Maintenance"
     },
@@ -19,7 +19,7 @@
       "category": "Hybrid",
       "price": "Rp 936.000",
       "sku": "NS60S",
-      "image": "",
+      "image": "assets/products/hybrid.jpg",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
       "specs": "Hybrid · Low Maintenance"
     },
@@ -29,7 +29,7 @@
       "category": "Hybrid",
       "price": "Rp 1.527.000",
       "sku": "N70Z",
-      "image": "",
+      "image": "assets/products/hybrid.jpg",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
       "specs": "Hybrid · Low Maintenance"
     },
@@ -39,7 +39,7 @@
       "category": "Maintenance Free",
       "price": "Rp 2.109.000",
       "sku": "355LN2",
-      "image": "",
+      "image": "assets/products/mf.jpg",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
       "specs": "Maintenance Free · P 242 × L 175 × T 190 mm"
     },
@@ -49,7 +49,7 @@
       "category": "Maintenance Free",
       "price": "Rp 6.211.000",
       "sku": "S95",
-      "image": "",
+      "image": "assets/products/mf.jpg",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
       "specs": "Maintenance Free · Idle Start Stop · P 260 × L 173 × T 204 mm"
     },
@@ -59,7 +59,7 @@
       "category": "Maintenance Free",
       "price": "Rp 4.170.000",
       "sku": "Q85",
-      "image": "",
+      "image": "assets/products/mf.jpg",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
       "specs": "Maintenance Free · Idle Start Stop · P 230 × L 171 × T 200 mm"
     },
@@ -69,7 +69,7 @@
       "category": "Maintenance Free",
       "price": "Rp 2.604.000",
       "sku": "M-42R",
-      "image": "",
+      "image": "assets/products/mf.jpg",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
       "specs": "Maintenance Free · Idle Start Stop"
     },
@@ -79,7 +79,7 @@
       "category": "Calcium",
       "price": "Rp 1.799.000",
       "sku": "75D23L",
-      "image": "",
+      "image": "assets/products/calcium.jpg",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
       "specs": "Calcium Battery"
     },
@@ -89,7 +89,7 @@
       "category": "Calcium",
       "price": "Rp 1.548.000",
       "sku": "65B24LS",
-      "image": "",
+      "image": "assets/products/calcium.jpg",
       "url": "https://www.shopanddrive.com/produk?category=Aki",
       "specs": "Calcium Battery"
     }
